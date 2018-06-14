@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InforService } from './service/infor.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  profile= {};
+
+  constructor(private infor: InforService) {
+    //this.infor.getUser().subscribe(res => {this.profile = res.json()});
+    this.infor.getUser().subscribe(profile => {
+      this.profile = profile})
+  }
 }
+
