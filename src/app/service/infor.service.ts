@@ -12,7 +12,7 @@ export class InforService {
 
   getUser(){
 
-    return this.http.get('https://conduit.productionready.io/api/profiles/eric').pipe(map(res =>{
+    return this.http.get('http://api.openweathermap.org/data/2.5/weather?q=pretoria&appid=3fe9e88e97712dcf566bc74a57238f9b').pipe(map(res =>{
       return res.json()
     }));
   }
